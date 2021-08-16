@@ -1,0 +1,16 @@
+<Project Sdk="Godot.NET.Sdk/3.3.0">
+  <PropertyGroup>
+    <RootNamespace>KSGodot</RootNamespace>
+    <AssemblyName>KSGodot</AssemblyName>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="**/*.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="GodotSharp">
+      <HintPath>../.mono/assemblies/Debug/GodotSharp.dll</HintPath>
+    </Reference>
+    <PackageReference Update="FSharp.Core" Version="5.0.0"  />
+  </ItemGroup>
+</Project>

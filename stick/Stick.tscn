@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ksgodot/stick/Stick.gd" type="Script" id=1]
+[ext_resource path="res://ksgodot/stick/base.png" type="Texture" id=2]
+[ext_resource path="res://ksgodot/stick/button.png" type="Texture" id=3]
+[ext_resource path="res://ksgodot/stick/baseActive.png" type="Texture" id=4]
+
+[node name="Stick" type="Node2D"]
+script = ExtResource( 1 )
+baseTexture = ExtResource( 2 )
+baseActiveTexture = ExtResource( 4 )
+buttonTexture = ExtResource( 3 )
+
+[node name="base" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="button" type="Sprite" parent="."]
+texture = ExtResource( 3 )
