@@ -2,7 +2,9 @@ namespace KSGodot
 
 open Godot
 
-type Page(internalNode: Node, texture: ImageTexture) =
+type Page(internalNode: Node, texture: Option<ImageTexture>) =
     do
-        internalNode.Call("startWith", texture, texture)
+        match texture with
+        | None -> internalNode.Call("startWith", null, null)
+        | Some tex -> internalNode.Call("startWith", tex, tex)
         |> ignore

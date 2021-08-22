@@ -1,5 +1,5 @@
 //adapted from https://gist.github.com/kleonc/a2bab51686ac6f4d7cb28aec88efa5d9
-namespace KSUtil
+namespace KSGodot
 
 open System
 open System.Collections.Generic
