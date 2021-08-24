@@ -37,7 +37,7 @@ func _unhandled_input(event):
 
 var wasKeyPressedBefore = false
 		
-func _process(delta):
+func _process(_delta):
 	var direction = Vector2.ZERO
 	if Input.is_key_pressed(KEY_LEFT):
 		direction.x -= 1
