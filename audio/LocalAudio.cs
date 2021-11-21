@@ -1,1 +1,0 @@
-public class LocalAudio : KSGodot.Audio.LocalAudio { }
