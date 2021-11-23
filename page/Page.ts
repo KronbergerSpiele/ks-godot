@@ -1,4 +1,4 @@
-class Page extends Node2D {
+export class Page extends Node2D {
   @exports
   frontTexture: ImageTexture | null = null;
   @exports
@@ -10,23 +10,21 @@ class Page extends Node2D {
   processTicks: int = 0;
 
   private get Screen() {
-    return this.get_node_unsafe<Sprite>("Screen");
+    return this.get_node("Screen");
   }
 
   private get Viewport() {
-    return this.get_node_unsafe<Viewport>("Viewport");
+    return this.get_node("Viewport");
   }
 
   private get FrontMaterial() {
-    return (
-      this.get_node_unsafe<MeshInstance>("Viewport/Front").mesh as PlaneMesh
-    ).material as ShaderMaterial;
+    return (this.get_node("Viewport/Front").mesh as PlaneMesh)
+      .material as ShaderMaterial;
   }
 
   private get BackMaterial() {
-    return (
-      this.get_node_unsafe<MeshInstance>("Viewport/Back").mesh as PlaneMesh
-    ).material as ShaderMaterial;
+    return (this.get_node("Viewport/Back").mesh as PlaneMesh)
+      .material as ShaderMaterial;
   }
 
   _enter_tree() {

@@ -1,4 +1,4 @@
-class Stick extends Node2D {
+export class Stick extends Node2D {
   @exports
   baseTexture: Texture = load("res://ksgodot/stick/base.png");
   @exports
@@ -13,11 +13,11 @@ class Stick extends Node2D {
   output: Vector2 = Vector2.ZERO;
 
   get Base() {
-    return this.get_node_unsafe<Sprite>("Base");
+    return this.get_node("Base");
   }
 
   get Button() {
-    return this.get_node_unsafe<Sprite>("Button");
+    return this.get_node("Button");
   }
 
   _ready() {

@@ -1,9 +1,9 @@
-class BackgroundAudio extends Node {
-  private player0() {
-    return this.get_node_unsafe<AudioStreamPlayer>("Background0");
+export class BackgroundAudio extends Node {
+  private get Player0() {
+    return this.get_node("Background0");
   }
-  private player1() {
-    return this.get_node_unsafe<AudioStreamPlayer>("Background1");
+  private get Player1() {
+    return this.get_node("Background1");
   }
   nextBackgroundPlayer = 0;
   currentBackgroundResourcePath = "";
@@ -12,9 +12,8 @@ class BackgroundAudio extends Node {
     if (stream.resource_path == this.currentBackgroundResourcePath) return;
     this.currentBackgroundResourcePath = stream.resource_path;
     const current =
-      this.nextBackgroundPlayer == 0 ? this.player1() : this.player0();
-    const next =
-      this.nextBackgroundPlayer == 0 ? this.player0() : this.player1();
+      this.nextBackgroundPlayer == 0 ? this.Player1 : this.Player0;
+    const next = this.nextBackgroundPlayer == 0 ? this.Player0 : this.Player1;
     current.stop();
     next.stop();
     next.stream = stream;
