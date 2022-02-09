@@ -36,7 +36,7 @@ export default class Stick extends Node2D {
     this.output = Vector2.ZERO;
   }
 
-  updateStick(direction = Vector2.ZERO) {
+  updateStick(direction: Vector2) {
     const clamped = direction.clamped(this.maxDistance);
     this.Button.position = clamped;
     this.output = clamped;
@@ -79,7 +79,7 @@ export default class Stick extends Node2D {
       this.updateStick(direction.mul(this.maxDistance));
     } else if (this.wasKeyPressedBefore) {
       this.wasKeyPressedBefore = false;
-      this.updateStick();
+      this.updateStick(Vector2.ZERO);
     }
   }
 }

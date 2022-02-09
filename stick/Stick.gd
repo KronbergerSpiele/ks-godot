@@ -43,8 +43,7 @@ func deactiveStick():
   self.Base.texture = self.baseTexture
   self.Button.position = Vector2.ZERO
   self.output = Vector2.ZERO
-func updateStick(direction = "[no value passed in]"):
-  direction = (Vector2.ZERO if (typeof(direction) == TYPE_STRING and direction == "[no value passed in]") else direction)
+func updateStick(direction):
   var clamped = direction.clamped(self.maxDistance)
   
   self.Button.position = clamped
@@ -89,5 +88,5 @@ func _process(_delta: float):
   else:
     if self.wasKeyPressedBefore:
       self.wasKeyPressedBefore = false
-      self.updateStick()
+      self.updateStick(Vector2.ZERO)
 
