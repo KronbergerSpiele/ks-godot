@@ -6,6 +6,8 @@
 
 [node name="Stick" type="Node2D"]
 script = ExtResource( 1 )
+maxDistance = null
+output = null
 
 [node name="Base" type="Sprite" parent="."]
 texture = ExtResource( 2 )
