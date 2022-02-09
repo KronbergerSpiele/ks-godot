@@ -1,4 +1,4 @@
-export class BackgroundAudio extends Node {
+export default class BackgroundAudio extends Node {
   private get Player0() {
     return this.get_node("Background0");
   }

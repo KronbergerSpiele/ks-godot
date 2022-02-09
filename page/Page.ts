@@ -1,4 +1,4 @@
-export class Page extends Node2D {
+export default class Page extends Node2D {
   @exports
   frontTexture: ImageTexture | null = null;
   @exports

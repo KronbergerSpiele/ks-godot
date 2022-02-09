@@ -1,3 +1,3 @@
-export class LocalAudio extends Node {
+export default class LocalAudio extends Node {
   play(stream: AudioStream, uniquifier?: string) {}
 }

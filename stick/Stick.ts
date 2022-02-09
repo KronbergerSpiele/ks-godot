@@ -1,4 +1,4 @@
-export class Stick extends Node2D {
+export default class Stick extends Node2D {
   @exports
   baseTexture: Texture = load("res://ksgodot/stick/base.png");
   @exports
