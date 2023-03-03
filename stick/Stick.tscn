@@ -1,16 +1,16 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://ksgodot/stick/Stick.gd" type="Script" id=1]
-[ext_resource path="res://ksgodot/stick/base.png" type="Texture" id=2]
-[ext_resource path="res://ksgodot/stick/button.png" type="Texture" id=3]
+[ext_resource path="res://ksgodot/stick/base.png" type="Texture2D" id=2]
+[ext_resource path="res://ksgodot/stick/button.png" type="Texture2D" id=3]
 
 [node name="Stick" type="Node2D"]
 script = ExtResource( 1 )
 maxDistance = null
 output = null
 
-[node name="Base" type="Sprite" parent="."]
+[node name="Base" type="Sprite2D" parent="."]
 texture = ExtResource( 2 )
 
-[node name="Button" type="Sprite" parent="."]
+[node name="Button" type="Sprite2D" parent="."]
 texture = ExtResource( 3 )

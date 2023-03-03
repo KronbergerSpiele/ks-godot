@@ -1,17 +1,17 @@
 extends Node2D
 class_name Stick
 
-export(Texture) var baseTexture = load("res://ksgodot/stick/base.png")
-export(Texture) var baseActiveTexture = load("res://ksgodot/stick/baseActive.png")
-export(Texture) var buttonTexture = load("res://ksgodot/stick/button.png")
-export(int) var maxDistance: int = 45
-export(Vector2) var output = Vector2.ZERO
+@export var baseTexture: Texture2D = load("res://ksgodot/stick/base.png")
+@export var baseActiveTexture: Texture2D = load("res://ksgodot/stick/baseActive.png")
+@export var buttonTexture: Texture2D = load("res://ksgodot/stick/button.png")
+@export var maxDistance: int = 45
+@export var output: Vector2 = Vector2.ZERO
 
-func Base() -> Sprite:
-  return $Base as Sprite
+func Base() -> Sprite2D:
+  return $Base as Sprite2D
 
-func Button() -> Sprite:
-  return $Button as Sprite
+func Button() -> Sprite2D:
+  return $Button as Sprite2D
 
 func _ready():
   self.output = Vector2.ZERO
@@ -28,9 +28,9 @@ func deactiveStick():
   self.output = Vector2.ZERO
 
 func updateStick(direction):
-  var clamped = direction.clamped(self.maxDistance)
-  self.Button().position = clamped
-  self.output = clamped
+  var limit_length = direction.limit_length(self.maxDistance)
+  self.Button().position = limit_length
+  self.output = limit_length
 
 func _unhandled_input(event):
   if event is InputEventScreenTouch:

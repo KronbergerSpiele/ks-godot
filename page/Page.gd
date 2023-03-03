@@ -1,24 +1,24 @@
 extends Node2D
 class_name Page
 
-export(ImageTexture) var frontTexture = null
-export(ImageTexture) var backTexture = null
+@export var frontTexture: ImageTexture = null
+@export var backTexture: ImageTexture = null
 
 var lastTexture = null
 var passedTime: float = 0.0
 var processTicks: int = 0
 
-func Screen() -> Sprite:
-  return $Screen as Sprite
+func Screen() -> Sprite2D:
+  return $Screen as Sprite2D
   
-func Viewport():
-  return $Viewport as Viewport
+func SubViewport():
+  return $SubViewport as SubViewport
   
 func FrontMaterial() -> Material:
-  return $Viewport/Front.mesh.material
+  return $SubViewport/Front.mesh.material
 
 func BackMaterial() -> Material:
-  return $Viewport/Back.mesh.material
+  return $SubViewport/Back.mesh.material
 
 func _enter_tree():
   if self.frontTexture or self.backTexture:
@@ -26,9 +26,9 @@ func _enter_tree():
 
 func _process(delta: float):
   self.passedTime = clamp(self.passedTime + delta, 0, 1)
-  self.FrontMaterial().set_shader_param("time", self.passedTime)
-  self.BackMaterial().set_shader_param("time", self.passedTime)
-  var texture = self.Viewport().get_texture()
+  self.FrontMaterial().set_shader_parameter("time", self.passedTime)
+  self.BackMaterial().set_shader_parameter("time", self.passedTime)
+  var texture = self.SubViewport().get_texture()
   
   self.Screen().texture = texture
   if self.passedTime >= 1:
@@ -36,8 +36,8 @@ func _process(delta: float):
     
 func startWith(front, back):
   if front or back:
-    self.FrontMaterial().set_shader_param("tex", front)
-    self.BackMaterial().set_shader_param("tex", back)
+    self.FrontMaterial().set_shader_parameter("tex", front)
+    self.BackMaterial().set_shader_parameter("tex", back)
   else:
     self.removeOneself()
 

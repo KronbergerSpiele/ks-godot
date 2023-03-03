@@ -3,13 +3,10 @@
 shader_type spatial;
 render_mode unshaded;
 
-uniform sampler2D tex: hint_albedo;
+uniform sampler2D tex: source_color;
 uniform float width = 48;
 uniform float height = 32;
 uniform float time = 0;
-
-const float PI = 3.14159265358979323846264;
-
 
 // This method computes rho, theta, and A for time parameter t using pre-defined functions to simulate a natural page turn
 // without finger tracking, i.e., for a quick swipe of the finger to turn to the next page.
