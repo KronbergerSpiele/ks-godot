@@ -5,6 +5,9 @@
 [sub_resource type="ShaderMaterial" id="1"]
 render_priority = 0
 shader = ExtResource("2")
+shader_parameter/width = 48.0
+shader_parameter/height = 32.0
+shader_parameter/time = 0.0
 
 [resource]
 material = SubResource("1")
