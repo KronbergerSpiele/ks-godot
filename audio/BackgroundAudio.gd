@@ -23,8 +23,5 @@ func playBackground(stream):
   next.stream = stream
   var length = stream.get_length()
   
-  var random = RandomNumberGenerator.new()
-  
-  random.randomize()
-  next.play(random.randi_range(0, length))
+  next.play(randf_range(0.0, length))
   self.nextBackgroundPlayer = 1 if self.nextBackgroundPlayer == 0 else 0
