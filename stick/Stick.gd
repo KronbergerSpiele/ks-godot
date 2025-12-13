@@ -69,4 +69,3 @@ func _process(_delta: float):
     if self.wasKeyPressedBefore:
       self.wasKeyPressedBefore = false
       self.updateStick(Vector2.ZERO)
-

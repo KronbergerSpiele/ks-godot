@@ -1,6 +1,6 @@
 [gd_resource type="PlaneMesh" load_steps=3 format=3 uid="uid://bk6wvqe652oik"]
 
-[ext_resource type="Shader" path="res://ksgodot/page/Page.gdshader" id="1"]
+[ext_resource type="Shader" uid="uid://id1nfwt5u6g" path="res://ksgodot/page/Page.gdshader" id="1"]
 
 [sub_resource type="ShaderMaterial" id="1"]
 render_priority = 0
